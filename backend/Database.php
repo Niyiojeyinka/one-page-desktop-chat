@@ -1,7 +1,7 @@
 <?php
 /**
  * @Description: This handles the database connection
- * and server as a mini query builder
+ * and serve as a mini query builder
  */
 require 'constants.php';
 class Database {
