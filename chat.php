@@ -56,7 +56,7 @@
 </div>
 
 </div>
-<div class="w3-center w3-bar w3-light-grey" style="padding-left: 48px;padding-top: 8px;padding-bottom: 8px">
+<div class="w3-center w3-bar w3-light-grey" style="padding-left: 48px;padding-top: 8px;padding-bottom: 8px;">
 
 <span class="w3-white  w3-border w3-margin w3-round-large" style="">
 <span class="w3-padding w3-button w3-bar-item" style="height: 50px;margin-top:5px" onclick="alert('hi')"><i class="fa fa-plus w3-text-pink"></i></span>
