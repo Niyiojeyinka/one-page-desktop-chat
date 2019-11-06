@@ -11,7 +11,7 @@ body {
   border: solid 1px #EEE;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  //padding: 10px;
 }
 
 .messages {

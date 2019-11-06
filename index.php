@@ -60,7 +60,7 @@ require "chat_profile.php";
 ?>
 </div>
 
-<div class="w3-container w3-padding w3-center chat outer w3-col s5 m5 l5">
+<div class="w3-center chat outer w3-col s5 m5 l5 w3-light-grey">
 	<?php
 require "chat.php";
 
