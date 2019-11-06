@@ -53,19 +53,6 @@ require("nav.php");
 
 <div class="w3-row">
 
-
-<div class="w3-col s4 m4 l4">
-	<?php
-require "chat_friend_list.php";
-
-?>
-</div>
-<div class="w3-col s5 m5 l5">
-	<?php
-require "chat.php";
-
-?>
-</div>
 <div class="w3-col m3 s3 l3">
 	<?php
 require "chat_profile.php";
@@ -73,6 +60,19 @@ require "chat_profile.php";
 ?>
 </div>
 
+<div class="w3-container w3-padding w3-center chat outer w3-col s5 m5 l5">
+	<?php
+require "chat.php";
+
+?>
+</div>
+
+<div class="w3-col s4 m4 l4">
+	<?php
+require "chat_friend_list.php";
+
+?>
+</div>
 
 </div>
 
