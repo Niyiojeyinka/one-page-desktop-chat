@@ -1,9 +1,6 @@
 <style type="text/css">
 body {
   font-family: helvetica;
-  //display: flex ;
-  flex-direction: column;
-  align-items: center;
 }
 
 .chat {
