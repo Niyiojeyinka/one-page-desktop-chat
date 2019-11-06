@@ -34,12 +34,16 @@ class Database {
   public function select($sql) {
 		$result = $this->conn->query($sql);
 
-		if ($result->num_rows > 0) {
+		if ($result->num_rows > 0 && $result->num_rows != 1 ) {
 			$resultToReturn = [];
 			while ($row = $result->fetch_assoc()) {
 				array_push($resultToReturn, $row);
 			}
 			return $resultToReturn;
+		}elseif ( $result->num_rows == 1 ) {
+            while ($row = $result->fetch_assoc()) {
+				return $row;
+			}
 		}
 		return 0;
 	}
