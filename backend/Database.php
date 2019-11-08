@@ -3,15 +3,15 @@
  * @Description: This handles the database connection
  * and serve as a mini query builder
  */
-require 'constants.php';
 class Database {
 	public $conn;
 	public function __construct() {
-		
-		$hostname = $dbData['hostname'];
-		$username = $dbData['username'];
-		$password = $dbData['password'];
-		$database = $dbData['database'];
+		require 'constants.php';
+
+		$hostname = $data['hostname'];
+		$username = $data['username'];
+		$password = $data['password'];
+		$database = $data['database'];
 
 
 		// Create connection
