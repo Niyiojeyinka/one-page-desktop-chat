@@ -15,9 +15,8 @@ $db->query("CREATE TABLE IF NOT EXISTS users (
         email varchar(128) NOT NULL,
         address varchar(128) NOT NULL,
         userStatus text NOT NULL,
+        friends text NOT NULL,
         profile_picture varchar(128),
-        followers text NOT NULL,
-        following text NOT NULL,
         lastlog varchar(128) NOT NULL,
         `time` varchar(128) NOT NULL,
         PRIMARY KEY (id)
@@ -55,7 +54,7 @@ $db->query(
 );"
 );
 
-
+//insert testing data
 $db->close();
 
 echo "All is set Now";
