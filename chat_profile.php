@@ -1,3 +1,11 @@
+<?php
+require 'backend/ChatProfile.php';
+
+$profile= new ChatProfile();
+var_dump($profile->getUserProfileById(1));
+
+?>
+
 <div  class="w3-opacity w3-pink w3-padding-jumbo w3-center" style="background-image: url('./images/profile6.jpg');height: 100vh">
 	<br>
 	<center>
