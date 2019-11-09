@@ -17,9 +17,7 @@ if (array_key_exists($indexOfIndexPHP + 1, $url_array) && $url_array[$indexOfInd
 			/*modified so that /apiroute.php/dashboard/totalExpenses/4
 				will call the totalExpenses function and insert 4 as parameter 
 			*/
-}
-
-else {
+}else {
   //home
 	echo "This Home, Direct Access Not Allowed";
 }
