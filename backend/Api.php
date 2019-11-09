@@ -25,5 +25,13 @@ class Api {
      
      echo json_encode($this->profile->getFriendsProfiles($id),true);
     }
-
+/*
+     *@parameter : id of user
+     * returns json consisting of the user's profiles
+     */
+     public function get_user_profile_by_id($id='')
+    {
+     
+     echo json_encode($this->profile->getUserProfileById($id),true);
+    }
 }
