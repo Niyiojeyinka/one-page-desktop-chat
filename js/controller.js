@@ -1,21 +1,21 @@
+const state = {
+	mineMessagePosition:"right",
+	mineChatTemplate: "<test>",
+	imageChatTemplate:"",
+	fileChatTemplate:"",
+	videoChatTemplate:"",
+	conversation_id: "hey",
+	friendsData: "loading..."
+	 };
 
-async function sendRequest(url,data){
-
-function formEncode(obj) {
-var str = [];
-for(var p in obj)
-str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-return str.join("&");
-}
-
-var dat = await fetch(url, {
-method: 'POST',
-headers: { "Content-type": "application/x-www-form-urlencoded"},
-body: formEncode(data)
-}).then(res => res.json())
-.then(response => JSON.stringify(response))
-.catch(error => console.error('Error: '+error));
-
-return JSON.parse(dat);
-
+function sendGetRequest(url){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      
+      state.friendsData= JSON.parse(this.responseText);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
 }

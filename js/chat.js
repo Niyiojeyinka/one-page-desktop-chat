@@ -1,11 +1,3 @@
-const state = {
-	mineMessagePosition:"right",
-	mineChatTemplate: "<test>",
-	imageChatTemplate:"",
-	fileChatTemplate:"",
-	videoChatTemplate:"",
-	conversation_id: "hey"
-	 };
 
 var chatDiv = document.querySelector("div[data-chat]");
 let chatUrl = "http://localhost/one/apiroute.php/get_conversation";
