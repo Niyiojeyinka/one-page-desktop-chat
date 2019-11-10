@@ -21,7 +21,6 @@ return `<div class="w3-bar w3-padding w3-dispay-container w3-border-bottom" oncl
 	</div>`;
 	}
 
-    //  state.friendsData= JSON.parse(this.responseText);
 
 function changeChat(conversation_id) {
 	state.conversation_id= conversation_id;
@@ -35,6 +34,5 @@ JSON.parse(data).forEach(function(profile) {
     profileDiv.innerHTML=profilesHtml;
 
  });
-// console.log(state.friendsData);
 
 
