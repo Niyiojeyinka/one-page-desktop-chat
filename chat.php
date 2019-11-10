@@ -1,7 +1,7 @@
 <!--<div class="w3-container" style="height: 100vh;overflow-y: scroll;" id="cover">-->
 	
       <div class="inner w3-white">
-        <div class="element w3-padding">	
+        <div data-chat class="element w3-padding">	
 
 <!--MAIN PAGE CONTENT STARTS HERE-->
 
