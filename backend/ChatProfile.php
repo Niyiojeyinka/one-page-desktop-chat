@@ -43,4 +43,8 @@ class ChatProfile
   return $this->db->select("SELECT * FROM conversation WHERE receiver_id =$firstPartyId && sender_id=$SecondPartyId OR receiver_id =$SecondPartyId && sender_id=$firstPartyId");
 
   }
+  public function getMessagesByConversationId($conversationId)
+  {
+  	return $this->db->select("SELECT * FROM messages WHERE conversation_id=$conversationId");
+  }
 }
