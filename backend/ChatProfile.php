@@ -54,7 +54,7 @@ class ChatProfile
      */
   public function getMessagesByConversationId($conversationId)
   {
-  	$query = $this->db->select("SELECT * FROM messages WHERE conversation_id = $conversationId");
+  	$query = $this->db->selectAll("SELECT * FROM messages WHERE conversation_id = $conversationId");
   	return $query;
   }
 
