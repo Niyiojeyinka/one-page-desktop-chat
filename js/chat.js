@@ -3,7 +3,7 @@ var chatDiv = document.querySelector("div[data-chat]");
 let chatUrl = "http://localhost/one/apiroute.php/get_conversation";
 
 /*
-function htmlFriendListTemplate(profile) {
+function htmlFriendListTemplate(p) {
 	
 return `<div class="w3-bar w3-padding w3-dispay-container w3-border-bottom">
 	<img class="w3-image w3-circle w3-bar-item" src="./images/${profile.profile_picture}" style="width:50px;height:50px;padding:0;" />
