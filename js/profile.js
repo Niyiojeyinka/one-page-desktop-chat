@@ -21,22 +21,20 @@ return `<div class="w3-bar w3-padding w3-dispay-container w3-border-bottom" oncl
 	</div>`;
 	}
 
+    //  state.friendsData= JSON.parse(this.responseText);
 
 function changeChat(conversation_id) {
 	state.conversation_id= conversation_id;
 }
- sendGetRequest(url);
-// console.log(state.friendsData);
+ sendGetRequest(url, function(data) {
+ 	let profilesHtml ="";
 
-setTimeout(()=>{
-		let profilesHtml ="";
-
-state.friendsData.forEach(function(profile) {
+JSON.parse(data).forEach(function(profile) {
       profilesHtml+= htmlFriendListTemplate(profile);
     });
     profileDiv.innerHTML=profilesHtml;
 
-},600);
-
+ });
+// console.log(state.friendsData);
 
 
