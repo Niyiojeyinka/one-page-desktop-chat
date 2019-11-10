@@ -82,8 +82,8 @@ require "chat_friend_list.php";
 
 </div>
 <script type="text/javascript" src="./js/controller.js"></script>
-<script type="text/javascript" src="./js/profile.js"></script>
 <script type="text/javascript" src="./js/chat.js"></script>
+<script type="text/javascript" src="./js/profile.js"></script>
 
 </body>
 </html>

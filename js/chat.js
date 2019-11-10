@@ -3,13 +3,13 @@ const state = {
 	mineChatTemplate: "<test>",
 	imageChatTemplate:"",
 	fileChatTemplate:"",
-	videoChatTemplate:""
+	videoChatTemplate:"",
+	conversation_id: "hey"
 	 };
 
 var chatDiv = document.querySelector("div[data-chat]");
 let chatUrl = "http://localhost/one/apiroute.php/get_conversation";
 
-alert(state.mineChatTemplate);
 /*
 function htmlFriendListTemplate(profile) {
 	
@@ -30,13 +30,13 @@ return `<div class="w3-bar w3-padding w3-dispay-container w3-border-bottom">
 		
 	</div>`;
 	}
+*/
 
-
-let getProfiles =sendRequest(url,{}).then(function(data){
+let getChats =sendRequest(chatUrl,{conversation_id: state.conversation_id}).then(function(data){
 	//JSON.parse(data);
 	let profilesHtml ="";
     data.forEach(function(profile) {
       profilesHtml+= htmlFriendListTemplate(profile);
     });
     profileDiv.innerHTML=profilesHtml;
-})*/
+})
