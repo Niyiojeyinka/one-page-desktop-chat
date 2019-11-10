@@ -36,6 +36,7 @@ class Api {
       $data=array();
      $friends=$this->profile->getFriendsProfiles($id);
       foreach($friends as $each_profile) {
+        unset($each_profile['password']);
 
       $conversation=$this->profile->getConversation( $_SESSION['id'],$each_profile['id']);
       if ($conversation == 0) {
@@ -43,7 +44,7 @@ class Api {
       }
       $messages= $this->profile->getMessagesByConversationId($conversation['id']);
 
-      $each_profile['lastMessage']  = $messages[count($messages)-1];
+      $each_profile['lastMessage']  = $messages[count($messages)>0?count($messages)-1:0];
       $each_profile['unreadMessages']= $this->profile->getUnreadMessagesByConversationId($conversation['id']);
       $each_profile['lastMessageTime']  = date( "F j, Y, g:i a",$messages[count($messages)-1]['time']);  
       $each_profile['status']  = time()-$each_profile['lastlog']  >120?"offline":"online";
