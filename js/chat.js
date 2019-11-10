@@ -1,5 +1,9 @@
 const state = {
-	mineChatTemplate: "<test>"
+	mineMessagePosition:"right",
+	mineChatTemplate: "<test>",
+	imageChatTemplate:"",
+	fileChatTemplate:"",
+	videoChatTemplate:""
 	 };
 
 var chatDiv = document.querySelector("div[data-chat]");
