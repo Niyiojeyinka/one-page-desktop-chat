@@ -1,4 +1,5 @@
 <?php
+      session_start();
 
 
 /**
@@ -16,22 +17,45 @@ class Api {
 	}
 
 
-    /*
-     *@parameter : id of user
-     * returns json consisting of the user's friends profiles
-     */
-    public function get_friends_profiles($id='')
-    {
-     
-     echo json_encode($this->profile->getFriendsProfiles($id),true);
-    }
-    /*
+     /*
      *@parameter : id of user
      * returns json consisting of the user's profiles
      */
-     public function get_user_profile_by_id($id='')
+    public function get_user_profile_by_id($id='')
     {
      
      echo json_encode($this->profile->getUserProfileById($id),true);
     }
+   
+    /*
+     *@parameter : id of user
+     * returns json consisting of the user's friends profiles
+     */
+     public function get_friends_profiles($id)
+    {
+      $data=array();
+     $friends=$this->profile->getFriendsProfiles($id);
+      foreach($friends as $each_profile) {
+
+      $conversation=$this->profile->getConversation( $_SESSION['id'],$each_profile['id']);
+      if ($conversation == 0) {
+      	continue;
+      }
+      $messages= $this->profile->getMessagesByConversationId($conversation['id']);
+
+      $each_profile['lastMessage']  = $messages[count($messages)-1];
+      $each_profile['unreadMessages']= $this->profile->getUnreadMessagesByConversationId($conversation['id']);
+      $each_profile['lastMessageTime']  = date( "F j, Y, g:i a",$messages[count($messages)-1]['time']);  
+      $each_profile['status']  = time()-$each_profile['lastlog']  >120?"offline":"online";
+ 
+
+       array_push($data, $each_profile);
+
+      }
+
+
+    echo  json_encode($data);
+
+    }
+
 }
