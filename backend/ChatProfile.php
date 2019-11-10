@@ -38,5 +38,9 @@ class ChatProfile
 		}
 		return $friends;
 	}
-   
+   public function getConversation($firstPartyId,$SecondPartyId)
+  {
+  return $this->db->select("SELECT * FROM conversation WHERE receiver_id =$firstPartyId && sender_id=$SecondPartyId OR receiver_id =$SecondPartyId && sender_id=$firstPartyId");
+
+  }
 }
