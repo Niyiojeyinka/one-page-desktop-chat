@@ -38,11 +38,20 @@ class ChatProfile
 		}
 		return $friends;
 	}
+	/*
+     *@parameters :$firstparty-id of the onwnerof this session,second id of message receiver 
+     * returns conversation row array
+     */
    public function getConversation($firstPartyId,$SecondPartyId)
   {
   return $this->db->select("SELECT * FROM conversation WHERE receiver_id =$firstPartyId && sender_id=$SecondPartyId OR receiver_id =$SecondPartyId && sender_id=$firstPartyId");
 
   }
+
+  /*
+     *@parameter : conversation id
+     *@returns an array of messages of a converstion
+     */
   public function getMessagesByConversationId($conversationId)
   {
   	return $this->db->select("SELECT * FROM messages WHERE conversation_id=$conversationId");
