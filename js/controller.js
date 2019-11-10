@@ -5,7 +5,7 @@ const state = {
 	fileChatTemplate:"",
 	videoChatTemplate:"",
 	conversation_id: 0,
-	friendsData: "loading..."
+	chatScreen: "loading..."
 	 };
 
 
