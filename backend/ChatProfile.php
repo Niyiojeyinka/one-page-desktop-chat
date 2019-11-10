@@ -54,6 +54,18 @@ class ChatProfile
      */
   public function getMessagesByConversationId($conversationId)
   {
-  	return $this->db->select("SELECT * FROM messages WHERE conversation_id=$conversationId");
+  	$query = $this->db->select("SELECT * FROM messages WHERE conversation_id = $conversationId");
+  	return $query;
+  }
+
+  /*
+     *@parameter : conversation id
+     *@returns number of unread message
+     */
+  public function getUnreadMessagesByConversationId($conversationId)
+  {
+  	$query = $this->db->selectAll("SELECT * FROM messages WHERE conversation_id = $conversationId AND status='sent'");
+  	//var_dump($query);exit();
+  	return count($query);
   }
 }
