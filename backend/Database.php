@@ -33,7 +33,7 @@ class Database {
 
   public function select($sql) {
 		$result = $this->conn->query($sql);
-
+    //var_dump($result);exit;
 		if ($result->num_rows > 0 && $result->num_rows != 1 ) {
 			$resultToReturn = [];
 			while ($row = $result->fetch_assoc()) {
@@ -44,6 +44,19 @@ class Database {
             while ($row = $result->fetch_assoc()) {
 				return $row;
 			}
+		}
+		return 0;
+	}
+
+	public function selectAll($sql) {
+		$result = $this->conn->query($sql);
+    //var_dump($result);exit;
+		if ($result->num_rows > 0 ) {
+			$resultToReturn = [];
+			while ($row = $result->fetch_assoc()) {
+				array_push($resultToReturn, $row);
+			}
+			return $resultToReturn;
 		}
 		return 0;
 	}
