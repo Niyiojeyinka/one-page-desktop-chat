@@ -61,7 +61,12 @@ class Api {
     public function get_conversation()
     {
       $messages= $this->profile->getMessagesByConversationId($_POST['conversation_id']);
-      echo json_encode($messages);
+       $message_array=array();
+      foreach ($messages as $message) {
+       $message['this_id'] = $_SESSION['id'] ;
+       array_push($message_array, $message);       
+      }
+      echo json_encode($message_array);
 
     }
 
