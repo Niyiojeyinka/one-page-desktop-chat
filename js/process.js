@@ -72,7 +72,7 @@ JSON.parse(data).forEach(function(message) {
 function saveMessage(){
 let inputText = document.querySelector("textarea").value;                                                 
 let chatUrl = "apiroute.php/save_message";
-let postinputText = document.querySelector("textarea").innerText="";
+let postinputText = document.querySelector("textarea").value="";
 sendPostRequest(chatUrl,{message:inputText,conversation_id:state.conversation_id,sender_id:state.senderId},function(data) {
 //JSON.parse(data)
 //alert("Sent");
