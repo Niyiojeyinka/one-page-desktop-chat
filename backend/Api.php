@@ -60,9 +60,9 @@ class Api {
     }
     public function get_conversation()
     {
-      $_POST['conversation_id'];
-      $messages= $this->profile->getMessagesByConversationId($conversation['id']);
+      $messages= $this->profile->getMessagesByConversationId($_POST['conversation_id']);
       echo json_encode($messages);
 
     }
+
 }
