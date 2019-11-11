@@ -1,5 +1,5 @@
 var profileDiv = document.querySelector("div[data-profiles]");
-let url = "http://localhost/one/apiroute.php/get_friends_profiles/1";
+let url = "apiroute.php/get_friends_profiles/1";
 
 function htmlFriendListTemplate(profile) {
  
@@ -31,17 +31,21 @@ JSON.parse(data).forEach(function(profile) {
  });
 
 /* chat processing here*/
+function htmlChat(message,type) {
+ 
+return  `
 
+`;
+	}
 function changeChat(conversation_id){
 	state.conversation_id= conversation_id;
 
 let chatDiv = document.querySelector("div[data-chat]");
-let chatUrl = "http://localhost/one/apiroute.php/get_conversation";
+let chatUrl = "apiroute.php/get_conversation";
 sendPostRequest(chatUrl,{conversation_id:state.conversation_id},function(data) {
 let messagesHtml ="";
 JSON.parse(data).forEach(function(message) {
       messagesHtml+= htmlChat(message);
-
 });
     chatDiv.innerHTML=messagesHtml;
 });
