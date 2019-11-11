@@ -1,6 +1,8 @@
 const state = {
 	conversation_id: 0,
-	chatScreen: "loading..."
+	chatScreen: "loading...",
+    receiver_id:0,
+    sender_id:0
 	 };
 
 

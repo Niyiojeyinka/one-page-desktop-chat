@@ -58,11 +58,13 @@ JSON.parse(data).forEach(function(message) {
 });
 } 
 
-function save_message(){
+function saveMessage(){
 let inputText = document.querySelector("textarea").value;                                                 
+let chatUrl = "apiroute.php/save_message";
 
 sendPostRequest(chatUrl,{message:inputText,conversation_id:state.conversation_id},function(data) {
 //JSON.parse(data)
+alert("Sent");
 });
 
 
