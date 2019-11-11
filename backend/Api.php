@@ -62,12 +62,20 @@ class Api {
     {
       $messages= $this->profile->getMessagesByConversationId($_POST['conversation_id']);
        $message_array=array();
-      foreach ($messages as $message) {
-       $message['this_id'] = $_SESSION['id'] ;
-       array_push($message_array, $message);       
-      }
+
+     for ($i=0; $i < count($messages); $i++) { 
+
+       $messages[$i]['this_id'] = $_SESSION['id'] ;
+       array_push($message_array, $messages[$i]);
+     }
+
       echo json_encode($message_array);
 
+    }
+
+    public function save_message()
+    {
+      $this->profile->saveMessage( $_POST['message'], $_POST['conversation_id']);
     }
 
 }

@@ -68,4 +68,21 @@ class ChatProfile
   	//var_dump($query);exit();
   	return count($query);
   }
+  /*
+     *@parameter : conversation id
+     *@returns the conversation array
+     */
+  public function getConversationById($conversationId)
+  {
+    $query = $this->db->select("SELECT * FROM conversation WHERE id = $conversationId");
+    //var_dump($query);exit();
+    return count($query);
+  }
+ /* public function saveMessage($message,$conversation_id)
+  {
+    $conversation = $this->getConversationById($conversation_id);
+    $now =time();
+$query= "INSERT INTO messages (`text`,receiver_id,sender_id,conversation_id,status,type,`time`) VALUES (".$message.",".$conversation['receiver_id'].",".$conversation['sender_id'].",'status','textonly',".$now");";
+    $this->db->query($query);
+  }*/
 }

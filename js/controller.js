@@ -15,7 +15,7 @@ function sendGetRequest(url, success) {
     return xhr;
 }
 
-function sendPostRequest(url, data, success,handleError) {
+function sendPostRequest(url, data, success) {
     var params = typeof data == 'string' ? data : Object.keys(data).map(
             function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
         ).join('&');
@@ -23,8 +23,7 @@ function sendPostRequest(url, data, success,handleError) {
     var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
     xhr.open('POST', url);
     xhr.onreadystatechange = function() {
-        if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }else{
-           handleError(); 
+        if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }
     };
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');

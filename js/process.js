@@ -3,7 +3,7 @@ let url = "apiroute.php/get_friends_profiles/1";
 
 function htmlFriendListTemplate(profile) {
  
-return `<div class="w3-bar w3-padding w3-dispay-container w3-border-bottom" onclick="changeChat(${profile.lastMessage.conversation_id});">
+return `<div class="w3-bar w3-padding w3-dispay-container w3-border-bottom w3-hover-light-gray" onclick="changeChat(${profile.lastMessage.conversation_id});">
 	<img class="w3-image w3-circle w3-bar-item" src="./images/${profile.profile_picture}" style="width:50px;height:50px;padding:0;" />
 	<div class="w3-bar-item" style="padding:0px;margin-left:12px;margin-top:2px;width: 80%;">
 		<span class=" w3-text-black" style="font-size:13px;">${profile.firstname} ${profile.lastname}<i class="fa fa-circle ${profile.status =="online"? "w3-text-green":"w3-text-gray"} w3-tiny" style="margin-left: 2px;"></i></span>
@@ -31,11 +31,18 @@ JSON.parse(data).forEach(function(profile) {
  });
 
 /* chat processing here*/
-function htmlChat(message,type) {
- 
-return  `
+function htmlChat(message) {
+ if (message.type= "textonly") {
 
-`;
+ return  `
+<div class="${message.this_id == message.sender_id?"mine":"yours"} messages">
+    <div class="message last">
+     ${message.text}
+     </div>
+  </div>
+`;	
+ }
+
 	}
 function changeChat(conversation_id){
 	state.conversation_id= conversation_id;
@@ -49,7 +56,19 @@ JSON.parse(data).forEach(function(message) {
 });
     chatDiv.innerHTML=messagesHtml;
 });
+} 
+
+function save_message(){
+let inputText = document.querySelector("textarea").value;                                                 
+
+sendPostRequest(chatUrl,{message:inputText,conversation_id:state.conversation_id},function(data) {
+//JSON.parse(data)
+});
+
+
 }
+ 
+
  
 
 
