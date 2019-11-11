@@ -1,9 +1,4 @@
 const state = {
-	mineMessagePosition:"right",
-	mineChatTemplate: "<test>",
-	imageChatTemplate:"",
-	fileChatTemplate:"",
-	videoChatTemplate:"",
 	conversation_id: 0,
 	chatScreen: "loading..."
 	 };
@@ -20,7 +15,7 @@ function sendGetRequest(url, success) {
     return xhr;
 }
 
-function sendPostRequest(url, data, success) {
+function sendPostRequest(url, data, success,handleError) {
     var params = typeof data == 'string' ? data : Object.keys(data).map(
             function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
         ).join('&');
@@ -28,7 +23,8 @@ function sendPostRequest(url, data, success) {
     var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
     xhr.open('POST', url);
     xhr.onreadystatechange = function() {
-        if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }
+        if (xhr.readyState>3 && xhr.status==200) { success(xhr.responseText); }else{
+           handleError(); 
     };
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
