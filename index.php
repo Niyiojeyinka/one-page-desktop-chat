@@ -50,7 +50,7 @@ require "chatStyle.php";
 </head>
 <body>
 
-<body>
+<body onload="getOwnerId()">
 <?php
 require("nav.php");
 

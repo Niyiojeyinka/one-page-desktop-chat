@@ -1,3 +1,14 @@
+ function getOwnerId(){
+let url = "apiroute.php/get_my_id";
+sendGetRequest(url, function(data) {
+ 	let id =JSON.parse(data).id;
+    state.senderId= id;
+
+ });
+
+}
+   
+
 var profileDiv = document.querySelector("div[data-profiles]");
 let url = "apiroute.php/get_friends_profiles/1";
 
@@ -61,10 +72,10 @@ JSON.parse(data).forEach(function(message) {
 function saveMessage(){
 let inputText = document.querySelector("textarea").value;                                                 
 let chatUrl = "apiroute.php/save_message";
-
-sendPostRequest(chatUrl,{message:inputText,conversation_id:state.conversation_id},function(data) {
+let postinputText = document.querySelector("textarea").innerText="";
+sendPostRequest(chatUrl,{message:inputText,conversation_id:state.conversation_id,sender_id:state.senderId},function(data) {
 //JSON.parse(data)
-alert("Sent");
+//alert("Sent");
 });
 
 
@@ -72,5 +83,9 @@ alert("Sent");
  
 
  
-
+setInterval(function(){
+	if (state.conversation_id != 0) {
+ changeChat(state.conversation_id);
+}
+},500);
 
