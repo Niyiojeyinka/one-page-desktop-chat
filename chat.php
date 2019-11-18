@@ -40,7 +40,7 @@
   <input type="file" name="myfile" />
 </div>
 <br>
-<button class="w3-button w3-margin w3-border  w3-round w3-large"><i class="fa fa-location-arrow w3-text-pink"></i> <span class="w3-tiny">Send</span></button>
+<button onClick="sendFile()" class="w3-button w3-margin w3-border  w3-round w3-large"><i class="fa fa-location-arrow w3-text-pink"></i> <span class="w3-tiny">Send</span></button>
 
 
          </div>
