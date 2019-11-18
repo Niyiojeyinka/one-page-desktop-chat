@@ -102,3 +102,18 @@ setInterval(function(){
 }
 },500);
 
+
+function detectFileType(input){
+	var fileTypes = ['jpg', 'jpeg', 'png','gif'];  //acceptable file types
+
+    if (input.files && input.files[0]) {
+        var extension = input.files[0].name.split('.').pop().toLowerCase(),  //file extension from input file
+            isImage = fileTypes.indexOf(extension) > -1;  //is extension in acceptable types
+          if(isImage){
+			  return "Image";
+		  }
+		  return "NotImage";
+         
+    }
+
+}
