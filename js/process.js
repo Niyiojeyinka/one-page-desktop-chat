@@ -89,7 +89,12 @@ function sendFile(){
 alert("done");
 	
 } 
+//search processing
+function checkSearch(){
+	let value = document.querySelector('input[type="search"]').value;
 
+alert(value);
+}
  
 setInterval(function(){
 	if (state.conversation_id != 0) {
