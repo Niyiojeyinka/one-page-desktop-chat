@@ -35,11 +35,14 @@
       class="w3-button w3-display-topright">&times;</span>
       <p>Please Select File to Send</p><br>
          <div class="w3-padding-jumbo">
-         <div class="upload-btn-wrapper w3-border">
+         <div class="upload-btn-wrapper ww-margin">
   <button class="btn">Upload a file</button>
   <input type="file" name="myfile" />
 </div>
-         
+<br>
+<button><i class="fa fa-location-arrow w3-text-pink"></i> <span class="w3-tiny">Send</span></button>
+
+
          </div>
     </div>
   </div>
