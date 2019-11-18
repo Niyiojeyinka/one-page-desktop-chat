@@ -40,6 +40,11 @@
   <input type="file" name="myfile" />
 </div>
 <br>
+<div class="w3-container w3-border" data-image-preview>
+<!--if image the preview goes here-->
+
+
+</div>
 <button onClick="sendFile()" class="w3-button w3-margin w3-border  w3-round w3-large"><i class="fa fa-location-arrow w3-text-pink"></i> <span class="w3-tiny">Send</span></button>
 
 
