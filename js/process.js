@@ -83,12 +83,7 @@ sendPostRequest(chatUrl,{message:inputText,conversation_id:state.conversation_id
 
 
 }
-function sendFile(){
-//show modal 
-//show preview 
-alert("done");
-	
-} 
+
 //search processing
 function checkSearch(){
 	let value = document.querySelector('input[type="search"]').value;
@@ -102,6 +97,37 @@ setInterval(function(){
 }
 },500);
 
+function fileChosen(e){
+let fileInput = document.querySelector('input[type="file"]');
+let displayFrame = document.querySelector('div[data-image-preview]');
+
+//check if is image
+	if(detectFileType(fileInput) =="Image"){
+		//show preview 
+		//showPreview();
+		for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+			//console.log(e);
+			var file = e.originalEvent.srcElement.files[i];
+			var img = document.createElement("img");
+			 img.setAttribute("class","w3-image");
+			var reader = new FileReader();
+			reader.onloadend = function() {
+				 img.src = reader.result;
+			}
+			reader.readAsDataURL(file);
+			displayFrame.innerHtml(img);
+
+		}
+	}
+
+}
+
+function sendFile(){
+
+
+	
+		
+	} 
 
 function detectFileType(input){
 	var fileTypes = ['jpg', 'jpeg', 'png','gif'];  //acceptable file types
