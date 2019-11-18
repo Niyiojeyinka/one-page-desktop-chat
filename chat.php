@@ -28,7 +28,7 @@
 
 
 <!-- The Modal -->
-<div id="fileModal" class="w3-modal">
+<div id="fileModal" class="w3-modal w3-center">
   <div class="w3-modal-content">
     <div class="w3-container">
       <span onclick="document.getElementById('fileModal').style.display='none'"
