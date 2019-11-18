@@ -83,7 +83,12 @@ sendPostRequest(chatUrl,{message:inputText,conversation_id:state.conversation_id
 
 
 }
- 
+function sendFile(){
+//show modal 
+//show preview 
+alert("done");
+	
+} 
 
  
 setInterval(function(){
