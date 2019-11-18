@@ -34,8 +34,11 @@
       <span onclick="document.getElementById('fileModal').style.display='none'"
       class="w3-button w3-display-topright">&times;</span>
       <p>Please Select File to Send</p><br>
-         <div>
-         
+         <div class="w3-padding-jumbo">
+         <div class="upload-btn-wrapper w3-border">
+  <button class="btn">Upload a file</button>
+  <input type="file" name="myfile" />
+</div>
          
          </div>
     </div>
