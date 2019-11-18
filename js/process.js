@@ -1,5 +1,5 @@
  function getOwnerId(){
-let url = "apiroute.php/get_my_id";
+let url = "./apiroute.php/get_my_id";
 sendGetRequest(url, function(data) {
  	let id =JSON.parse(data).id;
     state.senderId= id;

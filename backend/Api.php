@@ -8,7 +8,7 @@
  * @descriptions :" class to handle ajax/fetch function requests"
  */
 
-require 'ChatProfile.php';
+require_once 'ChatProfile.php';
 class Api {
 	  public $profile;
 	public function __construct()

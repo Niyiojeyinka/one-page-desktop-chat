@@ -9,7 +9,7 @@ $indexOfIndexPHP = array_search("apiroute.php", $url_array);
 if (array_key_exists($indexOfIndexPHP , $url_array) && $url_array[$indexOfIndexPHP] != "" && isset($url_array[$indexOfIndexPHP + 1])) {
 	//If url as first parameter and the parameter is not /
 	
-	require_once "backend/api.php";
+	require "backend/Api.php";
 			$api = new Api;
 			$method = $url_array[$indexOfIndexPHP + 1];
 			$parameter = isset($url_array[$indexOfIndexPHP + 2]) ? $url_array[$indexOfIndexPHP + 2]: NULL;
