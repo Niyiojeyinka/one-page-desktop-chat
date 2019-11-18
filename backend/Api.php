@@ -84,6 +84,11 @@ class Api {
     {
       echo json_encode(["id" => $_SESSION['id']]);
     }
-   
+    public function uploadFile(){
+
+    //upload the file to be sent to receiver
+    
+
+    }
 
 }
