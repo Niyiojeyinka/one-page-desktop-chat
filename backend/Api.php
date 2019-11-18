@@ -75,7 +75,10 @@ class Api {
 
     public function save_message()
     {
+      if(!empty($_POST['message'])){
       $this->profile->saveMessage( $_POST['message'], $_POST['conversation_id'],$_POST['sender_id']);
+
+      }
     }
      public function get_my_id()
     {
