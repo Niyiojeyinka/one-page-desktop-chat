@@ -100,25 +100,20 @@ setInterval(function(){
 function fileChosen(e){
 let fileInput = document.querySelector('input[type="file"]');
 let displayFrame = document.querySelector('div[data-image-preview]');
-
 //check if is image
-	if(detectFileType(fileInput) =="Image"){
-		//show preview 
-		//showPreview();
-		for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
-			//console.log(e);
-			var file = e.originalEvent.srcElement.files[i];
-			var img = document.createElement("img");
-			 img.setAttribute("class","w3-image");
-			var reader = new FileReader();
-			reader.onloadend = function() {
-				 img.src = reader.result;
-			}
-			reader.readAsDataURL(file);
-			displayFrame.innerHtml(img);
+console.log(`${e} First Testing`);
 
-		}
-	}
+	var UploadFile    =  document.getElementById('FileUpload').files[0]; 
+	var ReaderObj  =  new FileReader(); 
+	ReaderObj.onloadend = function () { 
+	   displayFrame.style.backgroundImage  = "url("+ ReaderObj.result+")";
+	 } 
+	if (UploadFile) { 
+	   ReaderObj.readAsDataURL(UploadFile);
+	 } else { 
+		displayFrame.style.backgroundImage  = "";
+	 } 
+   
 
 }
 
