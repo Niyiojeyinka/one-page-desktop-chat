@@ -101,19 +101,27 @@ function fileChosen(e){
 let fileInput = document.querySelector('input[type="file"]');
 let displayFrame = document.querySelector('div[data-image-preview]');
 //check if is image
-console.log(`${e} First Testing`);
 
-	var UploadFile    =  document.getElementById('FileUpload').files[0]; 
-	var ReaderObj  =  new FileReader(); 
-	ReaderObj.onloadend = function () { 
-	   displayFrame.style.backgroundImage  = "url("+ ReaderObj.result+")";
-	 } 
-	if (UploadFile) { 
-	   ReaderObj.readAsDataURL(UploadFile);
-	 } else { 
-		displayFrame.style.backgroundImage  = "";
-	 } 
-   
+	if(detectFileType(fileInput) =="Image"){
+		//show preview 
+			var file = document.getElementById('FileUpload').files[0]; 
+			var img = document.createElement("img");
+			 img.setAttribute("class","w3-image");
+			var reader = new FileReader();
+			reader.onloadend = function() {
+				img.src = reader.result;
+			}
+			reader.readAsDataURL(file);
+			displayFrame.innerHTML=``;
+
+			displayFrame.append(img);
+console.log(img);
+		}else{
+
+			displayFrame.innerHTML=`${detectFileType(fileInput)} File Chosen`;
+
+		}
+	
 
 }
 
@@ -133,7 +141,7 @@ function detectFileType(input){
           if(isImage){
 			  return "Image";
 		  }
-		  return "NotImage";
+		  return extension;
          
     }
 
