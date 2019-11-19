@@ -38,10 +38,10 @@
          <div class="upload-btn-wrapper ww-margin">
   <button class="btn">Upload a file</button>
   
-  <input onChange="fileChosen(event)" type="file" name="myfile" />
+  <input onChange="fileChosen(event)" type="file" name="myfile" id="FileUpload" />
 </div>
 <br>
-<div class="w3-container w3-border w3-center" data-image-preview>
+<div class="w3-container w3-center" data-image-preview>
 <!--if image the preview goes here-->
 
 </div>
