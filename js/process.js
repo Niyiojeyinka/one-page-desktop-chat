@@ -57,6 +57,9 @@ function htmlChat(message) {
 	}
 function changeChat(conversation_id){
 	state.conversation_id= conversation_id;
+	if(state.conversation_id != 0){
+		document.querySelector("div[data-key]").style.display="block";
+	}
 
 let chatDiv = document.querySelector("div[data-chat]");
 let chatUrl = "apiroute.php/get_conversation";
