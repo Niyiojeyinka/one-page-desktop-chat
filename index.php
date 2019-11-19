@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['id'] = 1;
+$_SESSION['id'] = 3;
 
 //check for session here during intefration by replacing the $_SESSION['id'] with your auth check
 ?>
@@ -106,7 +106,10 @@ require "chat_friend_list.php";
 
 </div>
 <script type="text/javascript" src="./js/controller.js"></script>
-<script type="text/javascript" src="./js/process.js"></script>
+<!--<script type="text/javascript" src="./js/process.js"></script>-->
+<?php
 
+require_once "js/process.js.php";
+?>
 </body>
 </html>
