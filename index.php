@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['id'] = 3;
+$_SESSION['id'] = 1;
 
 //check for session here during intefration by replacing the $_SESSION['id'] with your auth check
 ?>
